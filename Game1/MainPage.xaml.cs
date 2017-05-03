@@ -22,9 +22,16 @@ namespace Game1
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        Windows.Media.Playback.MediaPlayer _mediaPlayer;
+
         public MainPage()
         {
             this.InitializeComponent();
+
+            _mediaPlayer = new Windows.Media.Playback.MediaPlayer();
+            _mediaPlayer.Source = Windows.Media.Core.MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/Kevin_MacLeod_-_Nu_Flute.mp3"));
+            // TODO: need to reduce volume on startup
+            _mediaPlayer.Play();
         }
 
         
